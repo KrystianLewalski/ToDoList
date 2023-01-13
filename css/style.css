@@ -10,3 +10,7 @@ html {
 body {
     font-family: 'Open Sans', sans-serif;
 }
+
+.done {
+    text-decoration: line-through;
+}

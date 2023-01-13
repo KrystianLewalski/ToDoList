@@ -23,19 +23,12 @@
         render();
     };
 
-    const render = () => {
-        let htmlString = "";
+    const toggleTaskDone = (taskIndex) => {
+        tasks[taskIndex].done = !tasks[taskIndex].done;
+        render();
+    }
 
-        for (const task of tasks) {
-            htmlString += `
-            <li>
-            <button class="js-remove">usuń</button>
-            ${task.content}
-            </li>
-            `;
-        }
-        document.querySelector(".js-tasks").innerHTML = htmlString;
-
+    const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove")
 
         removeButtons.forEach((removeButton, index) => {
@@ -43,6 +36,31 @@
                 removeTask(index);
             });
         });
+
+        const toggleDoneButtons = document.querySelectorAll(".js-done")
+
+        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+            toggleDoneButton.addEventListener("click", () => {
+                toggleTaskDone(index);
+            });
+        });
+    };
+
+    const render = () => {
+        let htmlString = "";
+
+        for (const task of tasks) {
+            htmlString += `
+            <li class="${task.done ? 'done': ""}">
+            <button class="js-done">zrobione?</buttons>
+            <button class="js-remove">usuń</button>
+            ${task.content}
+            </li>
+            `;
+        }
+        document.querySelector(".js-tasks").innerHTML = htmlString;
+
+       bindEvents();
     };
 
     const onFormSubmit = (event) => {
@@ -67,4 +85,4 @@
     init();
 }
 
-// ${task.done ? task.classlist.toggle(".done") : ""} dodać do li w html string!
+//  dodać do li w html string!
