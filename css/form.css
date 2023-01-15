@@ -1,0 +1,15 @@
+.form {
+    background-color: white;
+    margin-top: 15px;
+}
+
+.form__header {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.form__input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    overflow: auto;
+}

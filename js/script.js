@@ -84,5 +84,3 @@
     };
     init();
 }
-
-//  dodać do li w html string!
