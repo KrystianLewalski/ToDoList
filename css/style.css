@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
     max-width: 1000px;
+    margin: 0 auto;
 }
 
 *, ::after, ::before {
@@ -13,8 +14,4 @@ html {
     word-break: break-word;
     padding: 20px;
     background-color:rgb(238, 238, 238);
-}
-
-.done {
-    text-decoration: line-through;
 }
