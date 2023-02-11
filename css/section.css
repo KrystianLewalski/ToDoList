@@ -35,6 +35,10 @@
     transition: 0.5s;
 }
 
+.section__buttons:disabled {
+    color: hsl(0, 0%, 50%);
+}
+
 @media (max-width:767px) {
     .section__legend {
         grid-template-columns: 1fr;
